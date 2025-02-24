@@ -1,6 +1,6 @@
 FROM python:3.9-slim
 
-# Install system dependencies required for building Python packages
+# Install system dependencies required for python-escpos and other libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
     libffi-dev \
@@ -10,11 +10,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
-# Copy and install Python dependencies
+# Copy requirements and install Python packages
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of your app
+# Copy the remaining application files
 COPY . .
 
 EXPOSE 5000
