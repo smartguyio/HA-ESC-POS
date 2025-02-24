@@ -1,0 +1,16 @@
+{
+  "name": "ESC-POS Printer Add-on",
+  "version": "1.0.0",
+  "slug": "HA-ESC-POS",
+  "description": "A Home Assistant add-on to print using ESC-POS commands on an Epson TM-T88 printer via LAN.",
+  "startup": "services",
+  "boot": "auto",
+  "options": {
+    "printer_ip": "192.168.1.100",
+    "printer_port": 9100
+  },
+  "schema": {
+    "printer_ip": "str",
+    "printer_port": "int"
+  }
+}
